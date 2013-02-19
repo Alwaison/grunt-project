@@ -67,6 +67,37 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       }
+    },
+    jade: {
+      compile: {
+        options: {
+          data: {
+            debug: false
+          }
+        },
+        files: {
+          "index.html": ["templates/*.jade"]
+        }
+      }
+    },
+    less: {
+      dev: {
+        options: {
+          paths: ["assets/less"]
+        },
+        files: {
+          "assets/css/styles.css": "assets/less/styles.less"
+        }
+      },
+      prod: {
+        options: {
+          paths: ["assets/less"],
+          yuicompress: true
+        },
+        files: {
+          "assets/css/styles.css": "assets/less/styles.less"
+        }
+      }
     }
   });
 
@@ -76,8 +107,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-less');
+
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('front_dev', ['jade', 'less:dev']);
 
 };
