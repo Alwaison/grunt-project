@@ -1,0 +1,33 @@
+{
+  "name": "grunt-project",
+  "version": "0.0.1",
+  "description": "Bootstrap grunt project",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-livereload": "~0.1.1",
+    "grunt-contrib-imagemin": "~0.1.1",
+    "grunt-contrib-jade": "~0.4.0",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-html": "~0.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Alwaison/grunt-project.git"
+  },
+  "keywords": [
+    "grunt"
+  ],
+  "author": "Joan Fernandez",
+  "license": "BSD",
+  "gitHead": "57cbbaaa541ab1492f21234d4cbc06bfde2841a6",
+  "readmeFilename": "README.md"
+}
